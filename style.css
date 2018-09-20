@@ -1,0 +1,18 @@
+#calc {
+    width: 20%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    list-style: none;
+}
+
+#calc li { border: thin solid; padding: 3px; text-align: center; }
+
+#display { grid-column: 1/5; height: 2em; }
+
+#clear { grid-column: 1/2; }
+#bs    { grid-column: 2/3; }
+#div   { grid-column: 3/4; grid-row: 2; }
+#mul   { grid-column: 4/5; grid-row: 2; }
+#sub   { grid-column: 4/5; grid-row: 3; }
+#add   { grid-column: 4/5; grid-row: 4; }
+#eval  { grid-column: 4/5; grid-row: 5/7; }
