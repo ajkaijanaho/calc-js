@@ -13,15 +13,25 @@
        governing permissions and limitations under the License.
 */
 #calc {
-    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    width: min-content;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, max-content);
     list-style: none;
 }
 
-#calc li { border: thin solid; padding: 3px; text-align: center; }
+#calc li:not(#errors) {
+    border: thin solid;
+    padding: .5em;
+    text-align: center;
+}
 
-#display { grid-column: 1/5; height: 2em; }
+#display, #errors {
+    grid-column: 1/5;
+    height: 2em;
+    min-width: 10em;
+}
 
 #clear { grid-column: 1/2; }
 #bs    { grid-column: 2/3; }

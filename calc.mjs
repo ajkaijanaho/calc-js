@@ -17,7 +17,13 @@ import {evaluate} from "./eval.mjs";
 
 function eval_clicked(ev) {
     let disp = document.getElementById("display");
-    disp.textContent = evaluate(disp.textContent);
+    let err = document.getElementById("errors");
+    try {
+        disp.textContent = evaluate(disp.textContent);
+        err.textContent = "";
+    } catch (ex) {
+        err.textContent = ex;
+    }
 }
 
 function key_clicked(ev) {
