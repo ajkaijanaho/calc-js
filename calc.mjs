@@ -36,6 +36,14 @@ function clear_clicked(ev) {
     disp.textContent = "";
 }
 
+function keydown_event(ev) {
+    if (ev.key == "Enter") {
+        ev.preventDefault();
+        eval_clicked();
+        return true;
+    }
+}
+
 document.addEventListener("DOMContentLoaded", (ev) => {
     let calc_ul = document.getElementById("calc");
     for (let child of calc_ul.getElementsByClassName("key")) {
@@ -44,4 +52,8 @@ document.addEventListener("DOMContentLoaded", (ev) => {
     document.getElementById("bs").addEventListener("click", bs_clicked);
     document.getElementById("clear").addEventListener("click", clear_clicked);
     document.getElementById("eval").addEventListener("click", eval_clicked);
+
+    let display = document.getElementById("display");
+    display.addEventListener("keydown", keydown_event);
+    display.contentEditable = 'true';
 });
